@@ -1,48 +1,23 @@
-# Eventos ERI · NI y NSI
+# Portal INS · Herramientas de vigilancia
 
-Herramienta estática para organizar notificaciones y cruzar Excel. Incluye accesos a SIVIGILA en Inmediata y a Reportes SIVIGILA en Super inmediata. Los accesos abren otra pestaña y requieren los permisos habituales de cada plataforma.
+## Abrir
+Descomprime todo el ZIP. Abre public/index.html en Chrome o Edge. Conserva todas las carpetas. Desde Inicio puedes elegir las cuatro herramientas. Volver al inicio y cambiar de herramienta conserva la sesión mientras la página permanezca abierta.
 
-## Publicar con GitHub y Netlify
+## Publicar
+Sube public (completa), netlify.toml, .gitignore y README.md a la raíz del repositorio de GitHub. Conecta ese repositorio con Netlify. Directorio de publicación: public. Comando de compilación: vacío. El enlace publicado será el punto de entrada a las cuatro herramientas. Los cambios publicados se reciben al recargar: exporta primero los resultados.
 
-1. Descomprime este ZIP.
-2. Crea un repositorio en GitHub (puede ser privado). Sube el contenido de esta carpeta: `public`, `netlify.toml`, `.gitignore` y este README deben quedar en la raíz del repositorio.
-3. En Netlify, importa un proyecto desde Git y elige GitHub. Autoriza el repositorio que acabas de crear.
-4. Selecciona la rama `main`. Deja el comando de compilación vacío y establece `public` como directorio de publicación. El archivo `netlify.toml` ya contiene esa ruta.
-5. Publica y comparte la URL que asigne Netlify. No hace falta redistribuir el HTML.
-6. Para futuras modificaciones, edita los archivos en GitHub y guarda los cambios en la rama conectada. Netlify publica la actualización automáticamente. Los usuarios deben terminar su corte, guardar sus resultados y recargar la página para abrir la nueva versión.
+## Organización
+- public/index.html: portada.
+- public/assets/portal.css: diseño.
+- public/assets/portal.js: navegación.
+- public/assets/logo-ins.png: imagen suministrada.
+- public/herramientas/notificaciones/index.html: archivo NI/NSI original, sin modificaciones.
+- public/herramientas/sivilab/index.html: archivo SIVILAB original, sin modificaciones.
+- public/herramientas/bes/index.html: archivo BES original, sin modificaciones.
+- public/herramientas/medios: EIOS, con almacenamiento temporal en memoria.
 
-No se ha creado un repositorio ni se ha publicado un sitio desde este paquete.
+## Monitoreo de medios
+Se retiró el guardado persistente del navegador y el menú de búsquedas guardadas. La revisión se mantiene durante la sesión para permitir filtrar, editar y exportar; al recargar o cerrar se pierde. Cada nueva búsqueda sustituye la anterior en memoria. No se usan IndexedDB, localStorage ni sessionStorage para guardar noticias. Se mantienen los dos filtros, la comparación de capturas y las exportaciones. Se trabaja con archivos exportados de EIOS; el portal no consulta fuentes automáticamente. Exporta Word o Excel antes de cerrar.
 
-## Qué archivo modificar
-
-| Archivo | Contenido |
-|---|---|
-| public/index.html | Barra de pestañas y página de entrada |
-| public/assets/suite.js | Navegación y envío de resultados al cruce |
-| public/modules/eri.html | Pantalla de inmediata y enlace a SIVIGILA |
-| public/modules/nsi.html | Pantalla de superinmediata y enlace a SharePoint |
-| public/modules/cross.html | Pantalla del cruce |
-| public/assets/eri.js | Lógica y reglas de inmediata |
-| public/assets/nsi.js | Lógica y reglas de superinmediata |
-| public/assets/cross.js | Lógica y reglas del cruce |
-| public/assets/*.css | Diseño de cada módulo |
-| public/vendor/ | Bibliotecas originales compartidas; conservar sus avisos de licencia |
-| netlify.toml | Carpeta a publicar y actualización de caché |
-
-## Uso y datos
-
-Los Excel se leen y procesan en el navegador. El proyecto no incluye un servidor para guardar bases ni las envía a Netlify. Los enlaces institucionales son accesos: no descargan automáticamente las bases ni inician sesión por el usuario. El repositorio contiene solo código, sin bases ni archivos de pacientes. La URL de Netlify tendrá la visibilidad configurada en ese servicio; un repositorio privado no convierte automáticamente el sitio en privado.
-
-La versión web necesita conexión para cargar inicialmente sus archivos. Las bibliotecas están incluidas y no usan CDN. No hay actualizaciones automáticas mientras una sesión está abierta: recargar descarta los datos no exportados.
-
-## Probar en el equipo
-
-Desde esta carpeta, con Python instalado: `python -m http.server 8000 --directory public`. Abre http://localhost:8000. Comprueba las tres pestañas, ambos enlaces, las cargas y las descargas antes de publicar cambios de reglas.
-
-Para usar un solo archivo sin servidor, abre `Eventos_ERI_Portatil.html`. Es una copia de esta entrega; los cambios posteriores de GitHub no actualizan esa copia. La versión recomendada para mantenimiento es la carpeta `public`.
-
-## Referencias de publicación
-
-https://docs.netlify.com/start/quickstarts/deploy-from-repository/
-https://docs.netlify.com/build/configure-builds/overview/
-https://docs.netlify.com/deploy/create-deploys/
+## Alcance
+Las bases se procesan localmente. No se incorporan bases de pacientes al paquete ni al repositorio. El logo corresponde al adjunto del usuario; el portal no añade autenticación institucional. Publicar no garantiza acceso restringido: depende de la configuración del alojamiento. No se ha publicado desde esta entrega.
