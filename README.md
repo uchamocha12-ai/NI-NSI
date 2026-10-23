@@ -45,3 +45,6 @@ La cabecera blanca con el logo se muestra solo en Inicio. Los módulos conservan
 - SIVILAB: botón Abrir SIVILAB en la barra superior.
 - Monitoreo de medios: botón Abrir EIOS en la barra superior.
 Todos los accesos abren otra pestaña, sin sustituir la revisión actual. El inicio de sesión se realiza directamente en cada plataforma.
+
+## Revisión en español
+Cada noticia muestra su estado de traducción. El título y resumen traducidos aparecen en campos editables, y el Word utiliza esos mismos campos. El texto original se consulta en “Texto original, coincidencias y trazabilidad”. El contador separa las aprobadas listas en español de las pendientes. Una traducción fallida no descarta la noticia ni impide intentar las demás; una configuración ausente pausa el proceso para no repetir solicitudes inútiles.
