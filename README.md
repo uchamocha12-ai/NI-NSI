@@ -11,7 +11,7 @@ Sube public (completa), netlify (completa), netlify.toml, .gitignore y README.md
 - public/assets/portal.css: diseño.
 - public/assets/portal.js: navegación.
 - public/assets/logo-ins.png: imagen suministrada.
-- public/herramientas/notificaciones/index.html: archivo NI/NSI original, sin modificaciones.
+- public/herramientas/notificaciones/index.html: NI/NSI con botones de acceso a Sivigila y reportes de SharePoint; procesamiento conservado.
 - public/herramientas/sivilab/index.html: archivo SIVILAB original, sin modificaciones.
 - public/herramientas/bes/index.html: archivo BES original, sin modificaciones.
 - public/herramientas/medios: EIOS, con almacenamiento temporal en memoria.
@@ -36,3 +36,12 @@ El servicio de este proyecto no incorpora autenticación de usuarios. Configura 
 Documentación: https://learn.microsoft.com/es-es/azure/ai-services/translator/text-translation/reference/authentication
 
 Validación de esta entrega: comprobaciones de sintaxis y pruebas simuladas de la función y del flujo de traducción. La llamada real requiere tu recurso de Azure; no se ha activado ni probado con una clave real.
+
+
+## Accesos a plataformas
+La cabecera blanca con el logo se muestra solo en Inicio. Los módulos conservan el botón Inicio y su sesión mientras el portal permanezca abierto. Se retiró el texto “Volver al inicio conserva la sesión abierta”.
+- Inmediata: botón Abrir Sivigila en su cabecera.
+- Superinmediata: botón Abrir reportes SIVIGILA en lugar del aviso de procesamiento local.
+- SIVILAB: botón Abrir SIVILAB en la barra superior.
+- Monitoreo de medios: botón Abrir EIOS en la barra superior.
+Todos los accesos abren otra pestaña, sin sustituir la revisión actual. El inicio de sesión se realiza directamente en cada plataforma.
