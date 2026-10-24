@@ -23,20 +23,8 @@ Se retiró el guardado persistente del navegador y el menú de búsquedas guarda
 Las bases se procesan localmente. En monitoreo de medios se envían título, resumen y observaciones aprobados al servicio Microsoft Translator, a través de Netlify. No se incorporan bases de pacientes al paquete ni al repositorio. El logo corresponde al adjunto del usuario; el portal no añade autenticación institucional. Publicar no garantiza acceso restringido: depende de la configuración del alojamiento. No se ha publicado desde esta entrega.
 
 
-## Activar la traducción automática (una sola vez)
-1. Crea un recurso Microsoft Azure Translator y consulta su clave y región en “Keys and Endpoint”. Puede requerir una suscripción y generar cargos según el plan y uso; comprueba la cuota del recurso.
-2. En las variables de entorno del proyecto Netlify añade `AZURE_TRANSLATOR_KEY` y `AZURE_TRANSLATOR_REGION`, disponibles para Functions. Nunca escribas la clave en HTML, JavaScript público o GitHub.
-3. Despliega de nuevo desde el repositorio que contiene `netlify/functions/translate.cjs`. Subir solamente `public` mediante arrastre no instala la función. GitHub Pages y abrir el HTML localmente no ejecutan este servicio.
-4. Aprueba una noticia: aparecerá el progreso de traducción. Comprueba el título y resumen; al exportar Word/PDF se verifica que todos los textos estén traducidos. Las fuentes, enlaces y nombres de lugares conservan su escritura original.
-
-Si falta la clave o falla Internet, la revisión sigue disponible y aparece “Reintentar traducción”. No se descarga un informe parcialmente traducido. Las ediciones realizadas durante una petición no se sobrescriben. Las noticias y traducciones continúan solo en memoria; exporta antes de cerrar. La traducción no cambia la decisión de incluir o excluir noticias. Excel de la vista también prepara los textos antes de descargar.
-
-El servicio de este proyecto no incorpora autenticación de usuarios. Configura el acceso al sitio y las cuotas del recurso según quién deba utilizarlo. La clave permanece en el servidor, pero las llamadas de los usuarios consumen su cuota.
-
-Documentación: https://learn.microsoft.com/es-es/azure/ai-services/translator/text-translation/reference/authentication
-
-Validación de esta entrega: comprobaciones de sintaxis y pruebas simuladas de la función y del flujo de traducción. La llamada real requiere tu recurso de Azure; no se ha activado ni probado con una clave real.
-
+## Traducción automática corregida
+Consulta `TRADUCCION_ESPAÑOL.md`. Ahora existe una alternativa local sin clave para navegadores compatibles. El servicio Microsoft Translator sigue disponible como respaldo si está configurado en Netlify. Las seleccionadas por el filtro y las aprobadas se traducen automáticamente.
 
 ## Accesos a plataformas
 La cabecera blanca con el logo se muestra solo en Inicio. Los módulos conservan el botón Inicio y su sesión mientras el portal permanezca abierto. Se retiró el texto “Volver al inicio conserva la sesión abierta”.
