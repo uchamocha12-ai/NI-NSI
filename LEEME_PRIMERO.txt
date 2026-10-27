@@ -1,0 +1,1 @@
+Monitoreo de medios integrado al Portal INS. Carga exportaciones de noticias y revisa los dos filtros. No se guardan datos en el navegador. Descarga Word o Excel antes de cerrar o recargar. Las bibliotecas y licencias originales se conservan.

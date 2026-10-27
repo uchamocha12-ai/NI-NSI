@@ -1,0 +1,3 @@
+Modelo español: @tesseract.js-data/spa 1.0.0, variante 4.0.0_best_int.
+Origen https://www.npmjs.com/package/@tesseract.js-data/spa
+Motor: Tesseract.js 7.0.0 y tesseract.js-core incluidos con sus licencias.

@@ -1,0 +1,7 @@
+node_modules/
+.netlify/
+*.xlsx
+*.xls
+*.csv
+*.msg
+*.eml
